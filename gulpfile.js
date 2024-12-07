@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const { parallel, series } = require("gulp");
-
+const deploy = require('gulp-gh-pages');
 const imagemin = require("gulp-imagemin");
 const htmlmin = require("gulp-htmlmin");
 const uglify = require("gulp-uglify");
@@ -11,13 +11,6 @@ const nunjucksRender = require("gulp-nunjucks-render");
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 
-// /*
-// TOP LEVEL FUNCTIONS
-//     gulp.task = Define tasks
-//     gulp.src = Point to files to use
-//     gulp.dest = Points to the folder to output
-//     gulp.watch = Watch files and folders for changes
-// */
 
 // Optimise Images
 function imageMin(cb) {
@@ -121,6 +114,11 @@ function watch_files() {
         browserSync.reload
     );
 }
+
+gulp.task('deploy', function () {
+    return gulp.src("./dist/**/*")
+      .pipe(deploy())
+});
 
 // Default 'gulp' command with start local server and watch files for changes.
 exports.default = series(nunjucks, css, js, imageMin, watch_files);

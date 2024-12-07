@@ -2,12 +2,244 @@
 
 {% block content %}
 <div class="main-content">
-    <div class="page-width">
-        <h1>🥤Gulp Boilerplate</h1>
-        <p>
-            A basic Gulp boilerplate to get developing locally with a few
-            helpful tools already set up.
-        </p>
-    </div>
+	<div class="page-width">
+
+		<section class="section resume">
+			<h2 class="h2">Подводим итоги прошедших&nbsp;акций</h2>
+
+			<div class="filters">
+				<div class="custom-select-wrapper">
+					<div class="custom-select custom-select--year">
+
+							<div class="select-box" onclick="toggleSelect(event)">
+									<span class="select-text">Год</span>
+									<span class="arrow"></span>
+							</div>
+							<div class="options">
+								<div class="mobile-controls">
+									<span class="mobile-controls__title">Год</span>
+									<span>Сбросить</span>
+								</div>
+								
+								<div class="list">
+									<label>
+											<input type="checkbox" value="2024">2024
+									</label>
+									<label>
+											<input type="checkbox" value="2023">2023
+									</label>
+									<label>
+											<input type="checkbox" value="2022">2022
+									</label>
+									<label>
+											<input type="checkbox" value="2021">2021
+									</label>
+									<label>
+											<input type="checkbox" value="2020">2020
+									</label>
+									<label>
+											<input type="checkbox" value="2019">2019
+									</label>
+								</div>
+
+								<button class="btn select-btn mobile">Применить</button>
+							</div>
+						</div>
+				</div>
+				
+				<div class="custom-select-wrapper">
+					<div class="custom-select custom-select--brand">
+							<div class="select-box" onclick="toggleSelect(event)">
+									<span class="select-text">Торговая сеть</span>
+									<span class="arrow"></span>
+							</div>
+							<div class="options">
+								<div class="mobile-controls">
+									<span class="mobile-controls__title">Год</span>
+									<span>Сбросить</span>
+								</div>
+
+								<div class="list">
+									<label>
+											<input type="checkbox" value="Axe">Axe
+									</label>
+									<label>
+											<input type="checkbox" value="Черный жемчуг">Черный жемчуг
+									</label>
+									<label>
+											<input type="checkbox" value="Инмарко">Инмарко
+									</label>
+									<label>
+											<input type="checkbox" value="Camay">Camay
+									</label>
+									<label>
+											<input type="checkbox" value="Axe">Axe
+									</label>
+									<label>
+											<input type="checkbox" value="Черный жемчуг">Черный жемчуг
+									</label>
+								</div>
+
+								<button class="btn select-btn mobile">Применить</button>
+							</div>
+						</div>
+				</div>
+
+				<div class="custom-select-wrapper">
+					<div class="custom-select custom-select--action">
+							<div class="select-box" onclick="toggleSelect(event)">
+									<span class="select-text">Название акции</span>
+									<span class="arrow"></span>
+							</div>
+							<div class="options">
+								<div class="mobile-controls">
+									<span class="mobile-controls__title">Год</span>
+									<span>Сбросить</span>
+								</div>
+
+								<div class="list">
+									<label>
+											<input type="checkbox" value="1">Пусть всегда будет вкусно!
+									</label>
+									<label>
+											<input type="checkbox" value="2">Держи курс на свежесть
+									</label>
+									<label>
+											<input type="checkbox" value="3">Зарядитесь двойной свежестью...
+									</label>
+									<label>
+											<input type="checkbox" value="3">Требуй большего с TRESemme
+									</label>
+									<label>
+											<input type="checkbox" value="4">Пусть всегда будет вкусно!
+									</label>
+									<label>
+											<input type="checkbox" value="5">Держи курс на свежесть
+									</label>
+								</div>
+
+								<button class="btn select-btn mobile">Применить</button>
+							</div>
+						</div>
+				</div>
+			</div>
+
+			<div class="resume__cards">
+				<div class="card">
+					<span class="card__number">348</span>
+          <span class="card__text">запущенных акций</span>
+				</div>
+				<div class="card">
+					<span class="card__number">21 458</span>
+          <span class="card__text">разыгранных призов</span>
+				</div>
+				<div class="card">
+					<span class="card__number">3 450</span>
+          <span class="card__text">реальных победителей</span>
+				</div>
+			</div>
+		</section>
+		
+		<section class="section winners">
+			<h2 class="h2">Поздравляем наших&nbsp;победителей</h2>
+
+			<div class="table-wrapper">
+				<table class="table">
+					<tr>
+						<th>#</th>
+						<th>Имя</th>
+						<th>Название акции</th>
+						<th>Приз</th>
+					</tr>
+
+					<tr>
+						<td>1</td>
+						<td>Анна</td>
+						<td>Пусть всегда будет вкусно!</td>
+						<td>Электронный сертификат Спортмастер</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Никита</td>
+						<td>Открывайте свой секрет красоты с TRESemme!</td>
+						<td>Электронный сертификат Спортмастер</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Александр</td>
+						<td>Зарядитесь двойной свежестью с Rexona</td>
+						<td>Электронный сертификат Спортмастер</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Алексей Иванов</td>
+						<td>Пломбирно на душе</td>
+						<td>Электронный сертификат Спортмастер</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Геннадий Петрович</td>
+						<td>Требуй большего с TRESemme</td>
+						<td>Электронный сертификат Детский Мир</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Анатолий Рай</td>
+						<td>Скидки до 35% на мужские антиперспиранты...</td>
+						<td>Электронный сертификат Детский Мир</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Анастасия</td>
+						<td>Разбудите свою природную красоту</td>
+						<td>Электронный сертификат Детский Мир</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Анатолий Рай</td>
+						<td>Скидки до 35% на мужские антиперспиранты...</td>
+						<td>Электронный сертификат Детский Мир</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Анастасия</td>
+						<td>Разбудите свою природную красоту</td>
+						<td>Электронный сертификат Детский Мир</td>
+					</tr>
+
+				</table>
+			</div>
+
+		</section>
+
+		<section class="section prize-slider">
+			<h2 class="h2">Еще не стали победителем? <br>
+				На Промонадо для Вас всегда&nbsp;найдется приз</h2>
+
+				{% include "slider.html" %}
+		</section>
+
+		<section class="section banner">
+			<div class="banner__text">
+				<h2 class="h2">Хотите принять участие&nbsp;в&nbsp;акции?</h2>
+
+				<ol>
+					<li>Покупайте любимые товары</li>
+          <li>Принимайте участие в акциях</li>
+          <li>Ждите результатов и выигрывайте!</li>
+				</ol>
+
+				<a class="banner__btn btn" href="https://promonado.ru/actions">Принять участие</a>
+			</div>
+
+			<picture class="banner__img" >
+				<source srcset="./img/img5_mobile.webp" media="(max-width: 767px)">
+				<source srcset="./img/img5.webp">
+				<img src="./img/img5.webp" alt="banner" title="banner image">
+			</picture>
+
+		</section>
+	</div>
 </div>
 {% endblock %}
+

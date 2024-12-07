@@ -6,10 +6,18 @@ html {
     box-sizing: border-box;
     font-family: $base-font-family;
     font-size: $base-font-size;
-    line-height: 1.5;
+    font-size: 62.5%;                   // Такое значение font-size используется для удобства конвертации px в rem (62.5% от размера шрифта браузера 16px = 10px),
     overflow-y: scroll;
     min-height: 100%;
     word-wrap: break-word;
+
+    @include tablet {
+        font-size: 58.5%;
+    }
+
+    @include mobile {
+        font-size: 54.5%;
+    } 
 }
 
 * {
@@ -21,21 +29,68 @@ html {
 }
 
 body {
-    align-items: stretch;
-    display: block;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.5;
-    min-height: 100vh;
-    overflow-x: hidden;
     position: relative;
     width: 100%;
+    background-color: $color-main;
+    font-family: 'Gilroy-Medium';
 }
 
 .page-width {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
-    padding-left: 5%;
-    padding-right: 5%;
+    max-width: 133.2rem;
+
+    @include tablet {
+        max-width: 120.3rem;
+    }
+    @include mobile {
+        max-width: 100%;
+        padding: 0 2.6rem;
+        overflow: hidden;
+    }
+}
+
+.section {
+    margin-bottom: 11rem;   
+    
+    @include tablet {
+        margin-bottom: 10rem;
+    }
+    @include mobile {
+        margin-bottom: 7.5rem;
+    }
+}
+
+.btn {
+    border: none;
+    border-radius: 3rem;
+    outline: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    opacity: 1;
+    transition: all .2s ease-in-out; 
+
+    &:hover, &:active {
+        opacity: .8;
+        transition: all .2s ease-in-out; 
+    }
+}
+
+.h2 {
+    color: $color-white;
+    margin-top: 0;
+    margin-bottom: 4.8rem;
+
+    @include tablet {
+        margin-bottom: 4rem;
+    }
+    @include mobile {
+        margin-bottom: 3.2rem;
+    }
+}
+
+.h3 {
+    color: $color-white;
+    margin: 0;
 }

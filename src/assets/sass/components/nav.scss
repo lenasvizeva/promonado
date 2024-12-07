@@ -2,25 +2,111 @@
 # Nav
 *------------------*/
 
-nav {
-    background: #333;
-    border-bottom-right-radius: 5px;
-    left: 0;
-    padding: 1rem;
-    position: absolute;
-    top: 0;
+.nav {
+	background: transparent;
+	display: flex;
+	align-items: center;
+	gap: 5.2rem;
 
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
+	@include tablet {
+		gap: 3rem;
+	}
+	@include mobile {
+		display: none;
+	}
 
-    li a {
-        color: #f9f9f9;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		gap: 4.2rem;
 
-        &:hover {
-            text-decoration: none;
-        }
-    }
+		@include tablet {
+			gap: 2rem;
+		}
+
+		&.dropdown-menu {
+			display: none;
+      position: absolute;
+      top: calc(100% + 1.6rem);
+      left: -4rem;
+      background-color: $color-white;
+      border-radius: 1.2rem;
+      z-index: 1;
+      padding: 1.6rem 2rem;
+
+			&:hover {
+				display: block;
+			}
+		}
+	}
+
+	li {
+
+		&.dropdown {
+			position: relative;
+
+			.dropdown-menu li {
+				margin-bottom: 1rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+	
+			.dropdown-menu li a {
+				margin-bottom: 1rem;
+				color: $color-main;
+				text-decoration: none;
+				font-size: 1.4rem;
+				line-height: 1.7rem;
+				font-weight: 700;
+			}
+			
+			.dropdown-menu li a:hover {
+				opacity: .6;
+			}
+	
+			&:hover {
+				.dropdown-menu {
+					display: block;
+				}
+			}
+		} 
+
+		a {
+			color: $color-blue;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+			position: relative;
+			padding: 2rem 0;
+
+
+			&:hover {
+				text-decoration: none;
+				color: $color-white;
+				transition: all 0.2s ease-in-out;
+			}
+		}
+
+		&:hover {
+			ul {
+				display: block;
+			}
+		}
+	}
+
+	.dropdown:hover .dropdown-menu,
+	.dropdown-menu:hover {
+		display: block;
+	}
+	
+	li.dropdown a:hover {
+		& + .dropdown-menu {
+			display: block;
+
+		}
+	}
 }

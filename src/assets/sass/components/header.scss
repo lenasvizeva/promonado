@@ -1,0 +1,145 @@
+.header {
+	display: flex;
+	justify-content: center;
+	height: 8.8rem;
+	position: relative;
+
+	@include mobile {
+		height: 5.5rem;
+		max-width: 100%;
+		padding: 0;
+		padding-right: 2.6rem;
+	}
+
+	.logo {
+		display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0 0 3rem;
+		width: 24rem;
+		height: 8.8rem;
+		background-color: $color-white;
+		position: relative;
+		top: 0;
+		left: 0;
+		transition: all .2s ease-in-out;
+
+		@include tablet {
+			position: relative;
+			width: 19.8rem;
+		}
+		@include mobile {
+			width: 13.1rem;
+			height: 5.5rem;
+
+			img {
+				width: 7.8rem;
+			}
+		}
+
+		&:hover {
+			border-radius: 0 0 6rem;
+			transition: border-radius .3s ease-in-out;
+			transition: all .2s ease-in-out;
+		}
+	}
+
+	.menu {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		margin-right: 13rem;
+		justify-content: space-between;
+		color: $color-white;
+		font-size: 1.4rem;
+		line-height: 1.7rem;
+		font-weight: bold;
+
+		@include tablet {
+			padding-right: 5vw;
+			margin-right: 0;
+		}
+		@include mobile {
+			justify-content: end;
+			margin-right: 0;
+		}
+
+		.custom-select--region {
+			display: flex;
+			align-items: center;
+			flex-direction: row-reverse;
+			position: relative;
+			margin-left: 8rem;
+
+			@include tablet {
+				margin-left: 2vw;
+			}
+			@include mobile {
+				display: none;
+			}
+
+			&::before {
+				content: '';
+				display: block;
+				width: 2rem;
+				height: 2rem;
+				background-color: $color-white;
+				border-radius: 50%;
+				margin-left: .5rem;
+			}
+
+			&::after {
+				content: '';
+				display: block;
+				width: 1.4rem;
+				height: 1rem;
+				background-image: url('../img/svg/chevron.svg');
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				position: absolute;
+				right: 3px;
+			}
+		} 
+
+		.burger-menu {
+			display: none;
+      background-color: #3167EE;
+      border-radius: 1.2rem;
+			padding: 1.1rem .9rem;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			width: 34px;
+			height: 34px;
+
+      @include mobile {
+        display: flex;
+      }
+     
+			&:hover {
+				opacity: 0.6;
+			}
+      
+		}
+	}
+
+	.btn--login {
+		background-color: #356FFF;
+		padding: .6rem 1.3rem .6rem 1.5rem;
+		font-size: 1.4rem;
+		line-height: 1.7rem;
+		color: $color-white;
+		font-weight: 500;
+
+		img {
+			margin-left: 2.4rem;
+			width: 2.2rem;
+			height: 2.2rem;
+			background-color: #FF88C4;
+			border-radius: 50%;
+			padding: .5rem .4rem;
+		}
+	}
+}

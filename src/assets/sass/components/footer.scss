@@ -1,0 +1,190 @@
+.footer {
+	background-color: $color-white;
+	padding-top: 6.3rem;
+
+	@include mobile {
+		max-width: 100%;
+		padding-top: 5.4rem;
+		padding-bottom: 5.6rem;
+	}
+
+	&__credits {
+		border-bottom: 3px solid #2D61E3;
+		margin-left: -5.4rem;
+		margin-right: -5.4rem;
+		padding: 0 5.4rem;
+
+		@include tablet {
+			margin: 0;
+		}
+		@include mobile {
+			padding: 0;
+			margin: 0;
+			padding-bottom: 11.2rem;
+		}		
+	}
+
+	.row {
+		display: grid;
+		align-items: center;
+		grid-template-columns: .8fr 1.5fr 1fr;
+		margin-bottom: 2.8rem;
+
+		@include tablet {
+			gap: 5.2rem;
+			justify-content: space-between;
+		}
+		@include mobile {
+			grid-template-columns: 1fr;
+			margin-bottom: 0;
+			gap: 3rem;
+		}
+
+		&:last-child {
+			align-items: end;
+		}
+	}
+
+	.col {
+		font-size: 2.2rem;
+		line-height: 2.7rem;
+		color: $color-main;
+		font-weight: 700;
+
+		@include tablet {
+			font-size: 1.42vw;
+		}
+
+		&--name {
+			display: flex;
+			align-items: end;
+		}
+		&--address {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			height: 100%;
+		}
+
+		.label {
+			font-size: 1.6rem;
+			line-height: 1.9rem;
+			color: $color-pale-blue;
+			display: block;
+			margin: .3rem 0;
+			font-weight: 600;
+
+			&--free {
+				font-weight: 600;
+			}
+		}
+	}
+    
+	&__links {
+		display: flex;
+		gap: 4.2rem;
+		align-items: center;
+		padding-top: 4.6rem;
+		padding-bottom: 4.4rem;
+
+		@include mobile {
+			gap: 3.1rem;
+			align-items: flex-start;
+			padding-top: 5.6rem;
+			padding-bottom: 3.1rem;
+			flex-direction: column;
+		}
+
+		a {
+			font-size: 1.4rem;
+			line-height: 1.7rem;
+			color: $color-main;
+			font-weight: 700;
+			text-transform: uppercase;
+
+			@include tablet {
+				font-size: 1.2vw;
+			}
+		}
+	}
+
+	&__docs {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include tablet {
+			padding: 0 5.4rem;
+		}
+		@include mobile {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+	}
+
+	&__copy {
+		font-size: 1.4rem;
+		line-height: 1.7rem;
+		color: $color-main;
+		font-weight: 700;
+	}
+
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		text-decoration: none;
+		color: $color-main;
+		position: relative;
+		padding-bottom: 1px;
+		cursor: pointer;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 1px;
+			display: block;
+			width: 0%;
+			height: 1px;
+			background-color: currentColor;
+			transition: width .3s ease-in-out;
+		}
+
+		.icon { 
+			display: block;
+			width: 2.2rem;
+			height: 2.2rem;
+			object-fit: contain;
+			margin-right: 1.2rem;
+			position: absolute;
+			bottom: .3rem;
+			left: -3.4rem;
+
+		}
+	}
+	.footer__link--underline {
+		&:before {
+			width: 100%;
+			transition: width .3s ease-in-out;
+
+			@include tablet {
+				width: 0;
+			}
+		}
+	}
+	.footer__link--underline {
+		&:hover {
+			&:before {
+				width: 0% !important;
+				transition: width .3s ease-in-out;
+			}
+		}
+	}
+	.footer__link:hover::before {
+		width: 100%;
+		transition: width .3s ease-in-out;
+	}
+	.footer__link:has(.icon) {
+		margin-left: 3.4rem;
+	}
+}

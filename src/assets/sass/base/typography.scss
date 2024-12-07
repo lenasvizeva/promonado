@@ -3,15 +3,6 @@
 *------------------*/
 
 /*
- * Uniform spacing and color for headings
-*/
-
-h1, h2, h3, h4, h5, h6 {
-    color: $color-black;
-    margin: $heading-spacing;
-}
-
-/*
  * Heading font sizes
 */
 
@@ -21,10 +12,23 @@ h1 {
 
 h2 {
     font-size: $h2-size;
+    line-height: 5.2rem;
+
+    @include mobile {
+        font-size: 2.8rem;
+        line-height: 2.9rem;
+        font-weight: 800;
+    }
 }
 
 h3 {
     font-size: $h3-size;
+
+    @include mobile {
+        font-size: 1.6rem;
+        line-height: 1.7rem;
+        font-weight: 900;
+    }
 }
 
 h4 {

@@ -21,9 +21,9 @@ const babel = require('gulp-babel');
 
 // Optimise Images
 function imageMin(cb) {
-    gulp.src("src/assets/images/*")
+    gulp.src("src/assets/img/**/*")
         .pipe(imagemin())
-        .pipe(gulp.dest("dist/images"));
+        .pipe(gulp.dest("dist/img"));
     cb();
 }
 
@@ -43,6 +43,12 @@ function minifyHTML(cb) {
             })
         )
         .pipe(gulp.dest("dist"));
+    cb();
+}
+
+function copyFonts(cb) {
+    gulp.src("src/assets/fonts/*")
+        .pipe(gulp.dest("dist/fonts"));
     cb();
 }
 
@@ -120,4 +126,4 @@ function watch_files() {
 exports.default = series(nunjucks, css, js, imageMin, watch_files);
 
 // 'gulp build' will build all assets but not run on a local server.
-exports.build = parallel(nunjucksMinify, css, js, imageMin);
+exports.build = parallel(nunjucksMinify, css, js, imageMin, copyHTML, copyFonts);
